@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #app {
+            font-family: Roboto, sans-serif;
+            color: #363e4f;
+        }
+
+        .data-label {
+            display: inline-block;
+            width: 160px;
+        }
+    </style>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p><strong class="data-label">A</strong><input type="text" v-model="a"></p>
+    <p><strong class="data-label">B</strong><input type="text" v-model="b"></p>
+    <p><strong class="data-label">C=A*2+2</strong><input type="text" v-model="c"></p>
+    <p><strong class="data-label">D=A+B*2</strong><input type="text" v-model="d"></p>
+    <p><strong class="data-label">E=B/2</strong><input type="text" v-model="e"></p>
+    <p><strong class="data-label">F=A*2+2</strong><input type="text" v-model="f"></p>
+    <p><strong class="data-label">G=A*2+2</strong><input type="text" v-model="g"></p>
+</div>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data() {
+            return {
+                a: 3,
+                b: 4
+            }
+        },
+        computed: {
+            c() {
+                return this.a * 2 + 2
+            },
+            d() {
+                return Number(this.a) + this.b * 2
+            },
+            e() {
+                return this.b / 2
+            },
+            f() {
+                return Number(this.c) + Number(this.d)
+            },
+            g() {
+                return this.d - this.e
+            }
+        }
+    })
+</script>
+</body>
+</html>
