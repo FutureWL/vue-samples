@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span id="harry" style="line-height: 32px">&nbsp;</span><br>
+<input type="text" id="trigger">
+<script type="text/javascript">
+    let harry = document.getElementById('harry')
+    let trigger = document.getElementById('trigger')
+    let key = 'profile'
+    let store = {}
+    let obj = {profile: ''}
+    Object.defineProperty(obj, key, {
+        set(value) {
+            harry.innerText = value
+            store[key] = value
+        },
+        get() {
+            return store[key]
+        }
+    })
+    trigger.addEventListener('keyup', function () {
+        obj[key] = this.value
+        console.log(obj[key])
+    })
+</script>
+</body>
+</html>
