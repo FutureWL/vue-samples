@@ -1,0 +1,47 @@
+Arguments: 
+  /opt/homebrew/Cellar/node/16.0.0_1/bin/node /opt/homebrew/Cellar/yarn/1.22.10/libexec/bin/yarn.js
+
+PATH: 
+  /opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  16.0.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/vue: tunneling socket could not be established, cause=connect ECONNREFUSED 127.0.0.1:8889
+      at ClientRequest.onError (/opt/homebrew/Cellar/yarn/1.22.10/libexec/lib/cli.js:152235:17)
+      at Object.onceWrapper (node:events:472:26)
+      at ClientRequest.emit (node:events:365:28)
+      at Socket.socketErrorListener (node:_http_client:447:9)
+      at Socket.emit (node:events:365:28)
+      at emitErrorNT (node:internal/streams/destroy:193:8)
+      at emitErrorCloseNT (node:internal/streams/destroy:158:3)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+npm manifest: 
+  {
+    "name": "demo-01",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "vue": "^2.6.14"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
